@@ -1,7 +1,8 @@
 from collections import Counter
+# This program analyzes a series of numbers input by the user.
 
 
-def main():
+def main():  # Main function to analyze numbers
     numbers = []
     while True:
         s = input("Enter a number (0 to finish): ").strip()
@@ -17,10 +18,10 @@ def main():
             break
         numbers.append(num)
 
-    if not numbers:
+    if not numbers:  # Handle case with no numbers entered
         print("No numbers entered.")
         return
-
+# Calculate statistics
     count = len(numbers)
     average = round(sum(numbers) / count, 2)
     minimum = min(numbers)
@@ -29,7 +30,7 @@ def main():
     count_negative = sum(1 for n in numbers if n < 0)
     freq = Counter(numbers)
     most_common_val, freq_count = freq.most_common(1)[0]
-
+# Print results
     print(f"Count: {count}")
     print(f"Average: {average}")
     print(f"Positive numbers: {count_positive}")
@@ -40,5 +41,7 @@ def main():
     print(f"Maximum number: {maximum}")
 
 
+# Entry point
 if __name__ == "__main__":
     main()
+# End of number_analyzer.py
